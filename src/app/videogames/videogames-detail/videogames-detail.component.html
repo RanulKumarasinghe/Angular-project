@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-xs-12">
+    <img
+    [src]="videogame.imagePath"
+    alt=" {{ videogame.name }}"
+    class="img-responsive"
+    style="max-height: 250px">
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h1> {{ videogame.name }}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="btn-group"
+    appDropdown>
+      <button
+      type="button"
+      class="btn btn-primary dropdown-toggle">
+        Manage Game <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a (click)="addToFeatures()" style="cursor: pointer;">To Feature List</a></li>
+        <li><a style="cursor: pointer;" (click)= "onEditGame()">Edit Game</a></li>
+        <li><a style="cursor: pointer;" (click)="onDeleteGame()">Delete Game</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    {{ videogame.description }}
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="list-group">
+      <li
+       class="list-group-item"
+       *ngFor="let feature of videogame.features">
+      {{ feature.name }} - {{ feature.imp }}
+    </li>
+    </ul>
+  </div>
+</div>
+<!-- Add map to here-->

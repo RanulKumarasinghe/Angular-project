@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-xs-10">
+    <app-feature-edit
+    ></app-feature-edit>
+    <hr>
+    <ul class="listgroup">
+      <a
+      class="list-group-item"
+      style="cursor: pointer"
+      *ngFor="let feature of (features | async).features; let i = index"
+      (click)="onEditFeature(i)"
+      >
+      {{ feature.name }} ({{ feature.imp }})
+      </a>
+    </ul>
+  </div>
+</div>

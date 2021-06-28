@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success" (click)="onNewGame()"> New Game</button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+
+      <app-videogame-game
+      *ngFor="let videogameEl of videogames; let i = index"
+      [videogame]="videogameEl"
+      [index]="i">
+    </app-videogame-game>
+
+  </div>
+</div>
